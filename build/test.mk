@@ -700,6 +700,7 @@ DEBUG_PROGRAM_NAMES = \
 	FlightTable \
 	RunTrace \
 	RunOLCAnalysis \
+	FuzzContest \
 	RunWaveComputer \
 	FlightPath \
 	BenchmarkProjection \
@@ -1626,6 +1627,13 @@ RUN_OLC_SOURCES = \
 RUN_OLC_LDADD = $(DEBUG_REPLAY_LDADD)
 RUN_OLC_DEPENDS = CONTEST UTIL GEO MATH TIME
 $(eval $(call link-program,RunOLCAnalysis,RUN_OLC))
+
+FUZZ_CONTEST_SOURCES = \
+	$(ENGINE_SRC_DIR)/Trace/Point.cpp \
+	$(ENGINE_SRC_DIR)/Trace/Trace.cpp \
+	$(TEST_SRC_DIR)/FuzzContest.cpp
+FUZZ_CONTEST_DEPENDS = CONTEST UTIL GEO MATH TIME
+$(eval $(call link-program,FuzzContest,FUZZ_CONTEST))
 
 RUN_WAVE_COMPUTER_SOURCES = \
 	$(DEBUG_REPLAY_SOURCES) \
