@@ -33,7 +33,7 @@ OLCSISAT::OLCSISAT(const Trace &_trace)
   R = remainder distance
 
   V: 1.00 point per km
-  Z: 0.75 points per km
+  Z: 0.50 points per km
   total score = V + Z*0.50
               = V + 0.50*(S-V)
               = (V + S)/2
